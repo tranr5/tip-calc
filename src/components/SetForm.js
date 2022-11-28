@@ -8,6 +8,7 @@ const SetForm = () => {
     const [tipTotal, setTipTotal] = useState(0)
     const [person, setPeople] = useState(0)
     const [per, setPer] = useState(0)
+    const [divide, setTotalDivide] = useState(0)
 
     const perFunc = (e)=>{
       if (e) {
@@ -19,9 +20,10 @@ const SetForm = () => {
   useEffect(() => {
     setTipTotal(tip*amount)
     setPer(tipTotal/person)
-    setTotal(tipTotal+amount)
+    setTotal(((tip*100) - (0 - amount)))
+    setTotalDivide(total/person)
 
-  },[amount,tip, person])
+  },[amount,tip, person, tipTotal])
 
   const resetFunc = ()=>setAmount(0)
 
@@ -57,16 +59,20 @@ const SetForm = () => {
           </div>
 
       <div className="right">
+
         <div>
-          <p>Tip Amount</p>
+          <p>Tip Amount </p>
+          <div className='tip-total' input type="text" placeholder={'0.00'}>${((Math.round(tipTotal * 100)) / 100).toFixed(2)}</div>
           <p>/ person</p>
-        <div className='tip-total' input type="text" placeholder={'0.00'}>${((Math.round(tipTotal * 100)) / 100).toFixed(2)}</div>
+          <div className='tip-total' input type="text" placeholder={'0.00'}>${((Math.round(per * 100)) / 100).toFixed(2)}</div>
         </div>
+
         <div>
-          <p>Total</p>
-          <p>/ person</p>
-          <div className='totals' input type="text" placeholder={'0'}/>${setPeople}
+          <p>Total</p> <div className='totals' input type="number" placeholder={'0'}/>${(total)}
         </div>
+          <p>/ person</p> <div className='totals' input type="number" placeholder={'0'}/>${(divide)}
+        
+          
         <div className='button-reset' >
                             <button className='button-reset_fill' onClick={resetFunc} > RESET </button>  
                             </div>
