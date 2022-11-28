@@ -10,12 +10,12 @@ const SetForm = () => {
       if (e) {
           e.preventDefault() 
       }
-    
+      setTip(e.target.value)
   }
 
   useEffect(() => {
     setTipTotal(tip*amount)
-    setTotal(tipTotal)
+    setTotal(tipTotal.)
   },[amount,tip])
 
   const resetFunc = ()=>setAmount(0)
@@ -54,12 +54,12 @@ const SetForm = () => {
         <div>
           <p>Tip Amount</p>
           <p>/ person</p>
-        <input type="text" placeholder={'0.00'}/>
+        <div className='tip-total' input type="text" placeholder={'0.00'}>${tipTotal}</div>
         </div>
         <div>
           <p>Total</p>
           <p>/ person</p>
-          <div className='totals' input type="text" placeholder={'0.00'}/>${tipTotal}
+          <div className='totals' input type="text" placeholder={'0.00'}/>${setTipTotal}
         </div>
         <div className='button-reset' >
                             <button className='button-reset_fill' onClick={resetFunc} > RESET </button>  
