@@ -70,7 +70,7 @@ const SetForm = () => {
         <div>
           <p>Total</p> <div className='totals' input type="number" placeholder={'0'}/>${(total)}
         </div>
-          <p>/ person</p> <div className='totals' input type="number" placeholder={'0'}/>${(divide)}
+          <p>/ person</p> <div className='totals' input type="number" placeholder={'0'}/>${divide.toFixed(2)}
         
           
         <div className='button-reset' >
