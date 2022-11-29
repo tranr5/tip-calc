@@ -29,14 +29,17 @@ const SetForm = () => {
 
     return (
       <form>
+        <div className='title'>Tip Calculator</div>
       <div className="App">
+
+        
           <div className="left">
             <div>
-              <p>Bill</p>
+              <div className="bill">BIll</div>
               <input className="input" placeholder='0.00' onChange = {(e)=> setAmount(e.target.value)}/>
             </div>
             <div>
-              <div>Tips %</div>
+              <div className='tips'>Tips %</div>
               <div>
                 <button type="button" value={0.05} onClick={perFunc}>5%</button>
                 <button type="button" value={0.10} onClick={perFunc}>10%</button>
@@ -45,11 +48,11 @@ const SetForm = () => {
                 <button type="button" value={0.20} onClick={perFunc}>20%</button>
                 <button type="button" value={0.25} onClick={perFunc}>25%</button>
                 <button type="button">Custom</button>
-                onChange = {(e)=>setTip(e.target.value/100)}
+                {/* onChange = {(e)=>setTip(e.target.value/100)} */}
               </div>
             </div>
             <div>
-              <div>
+              <div className='nopeople'>
                 Number of People
               </div>
               <div>
@@ -60,23 +63,30 @@ const SetForm = () => {
 
       <div className="right">
 
-        <div>
-          <p>Tip Amount </p>
-          <div className='tip-total' input type="text" placeholder={'0.00'}>${((Math.round(tipTotal * 100)) / 100).toFixed(2)}</div>
-          <p>/ person</p>
-          <div className='tip-total' input type="text" placeholder={'0.00'}>${((Math.round(per * 100)) / 100).toFixed(2)}</div>
+        <div className='tipcontainer'>
+        <div className="ta">Tip Amount</div>
+          <div className='tiptotal' input type="text" placeholder={'0.00'}>${((Math.round(tipTotal * 100)) / 100).toFixed(2)}</div>
+        </div>
+        <div className='tippercontainer'>
+        <div className="tipper">/person</div>
+          <div className='tippertotal' input type="text" placeholder={'0.00'}>${((Math.round(per * 100)) / 100).toFixed(2)}</div>
         </div>
 
-        <div>
-          <p>Total</p> <div className='totals' input type="number" placeholder={'0'}/>${(total)}
+
+
+        <div className='totalcontainer'> 
+        <div className="totala">Total</div>
+          <div className='totalsum' input type="number" placeholder={'0'}>${(total)}</div>
         </div>
-          <p>/ person</p> <div className='totals' input type="number" placeholder={'0'}/>${divide.toFixed(2)}
-        
+        <div className='totalpercontainer'>
+        <div className="totalper">/person</div>
+        <div className='totalpersum' input type="number" placeholder={'0'}>${divide.toFixed(2)}</div>
+        </div>
           
         <div className='button-reset' >
-                            <button className='button-reset_fill' onClick={resetFunc} > RESET </button>  
-                            </div>
-      </div>
+             <button className='button-reset_fill' onClick={resetFunc} > RESET </button>  
+          </div>
+          </div>
     </div>
     </form>
     )
