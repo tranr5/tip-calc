@@ -1,6 +1,11 @@
-# Getting Started with Create React App
+# Tip Calculator App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The app is able to:
+
+View the optimal layout for the app depending on their device's screen size
+See hover states for all interactive elements on the page
+Calculate the correct tip and total cost of the bill per person
+I love receiving feedback! I am always looking to improve. So if you have anything you'd like to mention.
 
 ## Available Scripts
 
