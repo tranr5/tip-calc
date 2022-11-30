@@ -1,5 +1,7 @@
 # Tip Calculator App
 
+![image](https://i.imgur.com/0TA1B1e.png)
+
 The app is able to:
 
 View the optimal layout for the app depending on their device's screen size
